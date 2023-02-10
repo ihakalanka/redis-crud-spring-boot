@@ -1,9 +1,6 @@
 package com.akalanka.rediscrud.entity;
 
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
-import lombok.ToString;
+import lombok.*;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.redis.core.RedisHash;
 
@@ -11,6 +8,7 @@ import org.springframework.data.redis.core.RedisHash;
 @NoArgsConstructor
 @Data
 @ToString
+@Builder
 @RedisHash("Student")
 public class Student {
     @Id
