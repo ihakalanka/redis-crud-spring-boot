@@ -15,7 +15,7 @@ public class StudentService {
         return studentRepository.save(student);
     }
 
-    public Student getStudentById(Long id){
+    public Student getStudentById(String id){
         return studentRepository.findById(id).get();
     }
 
@@ -23,12 +23,12 @@ public class StudentService {
         return studentRepository.findAll();
     }
 
-    public ResponseEntity<String> deleteStudentById(Long id){
+    public ResponseEntity<String> deleteStudentById(String id){
         studentRepository.deleteById(id);
         return ResponseEntity.ok("Student Deleted");
     }
 
-    public ResponseEntity<String> updateStudent(Student student, Long id){
+    public ResponseEntity<String> updateStudent(Student student, String id){
         Student student1 = studentRepository.findById(id).get();
         student1.setName(student.getName());
         student1.setAddress(student.getAddress());

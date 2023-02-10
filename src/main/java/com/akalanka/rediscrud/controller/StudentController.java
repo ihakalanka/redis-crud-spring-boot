@@ -17,22 +17,22 @@ public class StudentController {
     }
 
     @GetMapping("/get/{id}")
-    public Student getStudentById(@PathVariable Long id){
+    public Student getStudentById(@PathVariable String id){
         return studentService.getStudentById(id);
     }
 
-    @GetMapping("/getall")
+    @GetMapping("/get-all")
     public Iterable<Student> getAllStudents(){
         return studentService.getAllStudents();
     }
 
     @PutMapping("/update/{id}")
-    public void updateStudent(@RequestBody Student student, @PathVariable Long id){
+    public void updateStudent(@RequestBody Student student, @PathVariable String id){
         studentService.updateStudent(student, id);
     }
 
     @DeleteMapping("/delete/{id}")
-    public void deleteStudentById(@PathVariable Long id){
+    public void deleteStudentById(@PathVariable String id){
         studentService.deleteStudentById(id);
     }
 }
