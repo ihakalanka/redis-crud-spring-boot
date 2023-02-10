@@ -20,4 +20,9 @@ public class StudentController {
     public Student getStudentById(@PathVariable Long id){
         return studentService.getStudentById(id);
     }
+
+    @GetMapping("/getall")
+    public Iterable<Student> getAllStudents(){
+        return studentService.getAllStudents();
+    }
 }
