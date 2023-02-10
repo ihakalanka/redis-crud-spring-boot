@@ -18,5 +18,7 @@ public class StudentService {
         return studentRepository.findById(id).get();
     }
 
-
+    public Iterable<Student> getAllStudents(){
+        return studentRepository.findAll();
+    }
 }
