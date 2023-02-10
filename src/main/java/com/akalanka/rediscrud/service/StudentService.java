@@ -27,4 +27,13 @@ public class StudentService {
         studentRepository.deleteById(id);
         return ResponseEntity.ok("Student Deleted");
     }
+
+    public ResponseEntity<String> updateStudent(Student student, Long id){
+        Student student1 = studentRepository.findById(id).get();
+        student1.setName(student.getName());
+        student1.setAddress(student.getAddress());
+        student1.setEmail(student.getEmail());
+        studentRepository.save(student1);
+        return ResponseEntity.ok("Student Updated");
+    }
 }
