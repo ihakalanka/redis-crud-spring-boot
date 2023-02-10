@@ -25,4 +25,9 @@ public class StudentController {
     public Iterable<Student> getAllStudents(){
         return studentService.getAllStudents();
     }
+
+    @PutMapping("/update/{id}")
+    public void updateStudent(@RequestBody Student student, @PathVariable Long id){
+        studentService.updateStudent(student, id);
+    }
 }
