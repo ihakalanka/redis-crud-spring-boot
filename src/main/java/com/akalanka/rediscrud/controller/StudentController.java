@@ -3,10 +3,7 @@ package com.akalanka.rediscrud.controller;
 import com.akalanka.rediscrud.entity.Student;
 import com.akalanka.rediscrud.service.StudentService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping("/student")
@@ -17,5 +14,10 @@ public class StudentController {
     @PostMapping("/save")
     public void addStudent(@RequestBody Student student){
         studentService.saveStudent(student);
+    }
+
+    @GetMapping("/get/{id}")
+    public Student getStudentById(@PathVariable Long id){
+        return studentService.getStudentById(id);
     }
 }
